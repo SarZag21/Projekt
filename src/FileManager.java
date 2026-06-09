@@ -1,9 +1,15 @@
 import java.io.*;
 import java.util.ArrayList;
-
+/**
+ * Handles loading and saving tasks to a file.
+ */
 public class FileManager {
     private static final String FILE_NAME = "tasks.txt";
-
+    /**
+     * Saves all tasks to a text file.
+     *
+     * @param tasks list of tasks
+     */
     public static void saveTasks(ArrayList<Task> tasks) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
             for (Task task : tasks) {
@@ -13,7 +19,11 @@ public class FileManager {
             System.out.println("Error while saving tasks.");
         }
     }
-
+    /**
+     * Loads tasks from a text file.
+     *
+     * @return list of loaded tasks
+     */
     public static ArrayList<Task> loadTasks() {
         ArrayList<Task> tasks = new ArrayList<>();
 

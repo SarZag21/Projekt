@@ -1,7 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * Graphical user interface of the To-Do application.
+ */
 public class TaskGUI extends JFrame {
+    /**
+     * Creates and displays the GUI.
+     */
     private TaskManager taskManager;
     private DefaultListModel<Task> listModel;
     private JList<Task> taskList;
@@ -48,7 +53,9 @@ public class TaskGUI extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    /**
+     * Adds a new task from the text field.
+     */
     private void addTask() {
         String title = taskField.getText().trim();
 
@@ -60,7 +67,9 @@ public class TaskGUI extends JFrame {
             FileManager.saveTasks(taskManager.getTasks());
         }
     }
-
+    /**
+     * Deletes the selected task.
+     */
     private void deleteTask() {
         int index = taskList.getSelectedIndex();
 
@@ -70,7 +79,9 @@ public class TaskGUI extends JFrame {
             FileManager.saveTasks(taskManager.getTasks());
         }
     }
-
+    /**
+     * Marks the selected task as completed.
+     */
     private void markDone() {
         int index = taskList.getSelectedIndex();
 
